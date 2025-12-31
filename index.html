@@ -22,15 +22,16 @@
   <div class="hero-content flex-col lg:flex-row-reverse">
    
     <div class="card bg-base-100 w-full max-w-sm shrink-0 shadow-2xl">
-      <div class="card-body">
+      <form class="card-body">
         <fieldset class="fieldset">
-          <label class="label">Account Number</label>
-          <input type="number" class="input" placeholder="Type Account Number" />
-          <label class="label">PIN</label>
-          <input type="text" class="input" placeholder="Type your PIN" />
+          <label class="fieldset-label">Account Number</label>
+          <input type="number" class="input" placeholder="Type Account Number" required />
+          <label class="fieldset-label">PIN</label>
+          <input type="text" class="input" placeholder="Type your PIN" required />
           <div><a class="link link-hover">Forgot PIN?</a></div>
           <button id="login-btn" class="btn btn-neutral mt-4">Login</button>
         </fieldset>
+      </form>
       </div>
     </div>
   </div>
