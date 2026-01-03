@@ -1,18 +1,50 @@
-document.getElementById("add-money").addEventListener("click", function(event) {
-    event.preventDefault(); // Prevent form submission
-    const amount = document.getElementById("amount").value;
-    const convertedAmount = parseFloat(amount);
-    const pin = document.getElementById("pin").value;
-    const convertedPin = parseInt(pin);
-    const mainBalance=document.getElementById("main-balance").innerText;
-    const convertedMainBalance=parseFloat(mainBalance);
+document
+  .getElementById("add-money")
+  .addEventListener("click", function (event) {
+    event.preventDefault();
+      const amount = getInputValueByID("amount");
+      const pin = getInputValueByID("pin");
+      const acount = document.getElementById("Acount-nunber").value;
+      const mainBalance = getInnerTextByID("main-balance")
+    console.log(mainBalance)
+    const selectedBank = document.getElementById("allbank").value;
+    
+    
+    if (amount<0) {
+      alert("Bro amount should be positive")
+      return;
+    }
+    
+    
 
-    if(convertedPin===1234){
-        const sum =convertedMainBalance+convertedAmount;
-        document.getElementById("main-balance").innerText=sum;
-        
-    }
-    else{
-        console.log("Incorrect Pin");
-    }
-})
+      if (acount.length===11) {
+        if (pin===1234) {
+            const sum = mainBalance + amount;
+            // document.getElementById("main-balance").innerText = sum;
+          setInnerTextByIDandValue("main-balance", sum)
+          
+          const container = document.getElementById("transection-container");
+
+          const div = document.createElement("div");
+div.classList.add("bg-red-400")
+          div.innerHTML = `
+          <h1 class="text-yellow-300">Added Money form ${selectedBank}</h1>
+          <h3>${amount}</h3> 
+          <p>account number: ${acount}</p>
+
+          
+          `
+          container.appendChild(div)
+
+
+
+        }
+        else {
+            console.log("pin tik nai")
+          }
+      } else {
+          console.log("account number tik nai")
+      }
+      
+    
+  });
