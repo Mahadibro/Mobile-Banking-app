@@ -43,9 +43,9 @@
               <img class="w-8 mx-auto" src="./assets/purse1.png" alt="" />
               <h3>Cash out</h3>
             </div>
-            <div class="box border p-4 text-center rounded-sm">
-              <img class="w-8 mx-auto" src="./assets/money1.png" alt="" />
-              <h3>Pay Bill</h3>
+           <div id="paybill-box" class="box border p-4 text-center rounded-sm">
+           <img class="w-8 mx-auto" src="./assets/money1.png" alt="" />
+            <h3>Pay Bill</h3>
             </div>
             <div class="box border p-4 text-center rounded-sm">
               <img class="w-8 mx-auto" src="./assets/wallet1.png" alt="" />
@@ -161,6 +161,29 @@
               </button>
             </fieldset>
           </section>
+          <section id="paybill">
+  <h2>Pay Bill</h2>
+  <fieldset class="fieldset">
+    <label class="fieldset-label">Biller</label>
+    <select id="biller-select" class="select">
+      <option disabled selected>Select biller</option>
+      <option value="Electricity">Electricity</option>
+      <option value="Water">Water</option>
+      <option value="Internet">Internet</option>
+    </select>
+
+    <label class="fieldset-label">Customer / Account number</label>
+    <input id="customer-number" type="text" class="input" placeholder="customer number" />
+
+    <label class="fieldset-label">Amount</label>
+    <input id="bill-amount" type="number" class="input" placeholder="amount" />
+
+    <label class="fieldset-label">PIN</label>
+    <input id="bill-pin" value="1234" type="text" class="input" placeholder="PIN" />
+
+    <button id="pay-bill-btn" class="btn btn-neutral bg-blue-700 mt-4">Pay Bill</button>
+  </fieldset>
+</section>
 
           <section id="transection-history">
 <h1 class="text-3xl font-bold text-red-400 text-center p-3">Transection History</h1>
@@ -177,6 +200,7 @@
     <script src="./utilities/utilities.js"></script>
     <script src="./script/addmoney.js"></script>
     <script src="./script/cashout.js"></script>
+    <script src="./script/paybill.js"></script>
     <script src="./script/transactionhistoryy.js"></script>
   </body>
 </html>
